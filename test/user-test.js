@@ -2,7 +2,6 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const User = require('../src/User');
-const sampleUserData = require('../test/users-sample');
 
 describe('User', () => {
 
@@ -27,7 +26,7 @@ describe('User', () => {
     expect(user1.name).to.equal('Luisa Hane');
   });
 
-    it('should return a user\'s first name', () => {
+  it('should return a user\'s first name', () => {
     let user1 = new User({ 
       "id": 1,
       "name": "Luisa Hane",
@@ -43,10 +42,4 @@ describe('User', () => {
     
     expect(user1.returnFirstName()).to.equal('Luisa');
   });
-
-
-
-
-
-
 });
