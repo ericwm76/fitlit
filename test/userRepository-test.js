@@ -5,9 +5,6 @@ const UserRepository = require('../src/UserRepository');
 const sampleUserData = require('../test/users-sample');
 
 describe('UserRepository', () => {
-  it('should ensure testing is working', () => {
-    expect(true).to.equal(true);
-  });
 
   it('should be a function', () => {
     expect(UserRepository).to.be.a('function');
