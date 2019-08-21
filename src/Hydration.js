@@ -11,9 +11,7 @@ class Hydration {
     let ouncesSum = this.findOuncesArray().reduce((prev, curr) => {
       return prev += curr
     });
-
-    let avgOunces = ouncesSum/this.data.length;
-
+    let avgOunces = ouncesSum / this.data.length;
     return avgOunces;
   }
 
