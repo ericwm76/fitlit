@@ -69,7 +69,7 @@ class Sleep {
   calculateAllAvgHours() {
     let avgHours = this.sleepData.map(obj => obj.hoursSlept).reduce((prev, curr) => {
       return prev += curr
-      }) / this.sleepData.length;
+    }) / this.sleepData.length;
     return Math.round(avgHours * 10) / 10;
   }
 
@@ -85,23 +85,23 @@ class Sleep {
   calculateAllAvgQuality() {
     let avgQuality = this.sleepData.map(obj => obj.sleepQuality).reduce((prev, curr) => {
       return prev += curr
-      }) / this.sleepData.length;
+    }) / this.sleepData.length;
     return Math.round(avgQuality * 10) / 10;
   }
 
   getHoursByDate(id, date) {
-    return this.getDataByID(id).find(obj => obj.date === '2019/06/16').hoursSlept;
+    return this.getDataByID(id).find(obj => obj.date === date).hoursSlept;
   }
 
   getQualityByDate(id, date) {
-    return this.getDataByID(id).find(obj => obj.date === '2019/06/16').sleepQuality;
+    return this.getDataByID(id).find(obj => obj.date === date).sleepQuality;
   }
 
   findMostHours(date) {
     let users = [];
     let hours = this.getDataByDate(date).map(obj => obj.hoursSlept);
     let maxTime = Math.max(...hours);
-    
+
     for (let i = 0; i < hours.length; i++) {
       if (hours[i] === maxTime) {
         users.push(i + 1);
