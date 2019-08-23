@@ -1,24 +1,58 @@
 class Sleep {
-  constructor(sleepData) {
-    this.sleepData = sleepData;
+  constructor(data) {
+    this.data = data;
   }
 
   getDataByID(id) {
-    return this.sleepData.filter(obj => obj.userID === id)
+    return this.data.filter(obj => obj.userID === id)
   }
 
   getDataByDate(date) {
-    return this.sleepData.filter(obj => obj.date === date)
+    return this.data.filter(obj => obj.date === date)
   }
 
-  findPropertyArray(id, property) {
-    let userData = this.getDataByID(id);
-    return userData.map(data => data[property]);
+  findSingleValue(id, date, prop) {
+    return this.getDataByID(id).find(dataObj => dataObj.date === date)[prop];
   }
 
-  findHoursArray(id) {
+  findPropArray(id, prop) {
+    let dataObjs = this.getDataByID(id);
+    return dataObjs.map(data => data[prop]);
+  }
+
+  findWeekArray(id, date, prop) {
+    let propArray = this.findPropArray(id, prop);
+    let dateIndex = this.getDataByID(id).findIndex(dataObj => dataObj.date === date);
+
+    if (propArray.length >= 7) {
+      return propArray.slice(dateIndex - 6, dateIndex + 1);
+    } else {
+      return propArray;
+    }
+  }
+
+  calculateAvgQuality(id) {
     let userData = this.getDataByID(id);
-    return userData.map(data => data.hoursSlept);
+    let qualitySum = this.findQualityArray(id).reduce((prev, curr) => {
+      return prev += curr
+    });
+    let avgQuality = qualitySum / userData.length;
+    return Math.round(avgQuality * 10) / 10;
+  }
+
+  findAvg(array) {
+    let avg = array.reduce(((prev, curr) => prev += curr), 0) / array.length;
+    return Math.round(avg * 10) / 10;
+  }
+
+  findWeekAvg(id, date, prop) {
+    let weekArr = this.findWeekArray(id, date, prop);
+    return Math.round(this.findAvg(weekArr));
+  }
+
+  findMaxOneUser(id, prop) {
+    let propArray = this.findPropArray(id, prop);
+    return Math.max(...propArray);
   }
 
   findQualityArray(id) {
@@ -26,30 +60,13 @@ class Sleep {
     return userData.map(data => data.sleepQuality);
   }
 
-  findHoursByWeek(id, date) {
-    if (this.findHoursArray(id).length >= 7) {
-      let endDateIndex = this.getDataByID(id).findIndex(obj => obj.date === date);
-      return this.findHoursArray(id).slice(endDateIndex - 6);
-    } else {
-      return this.findHoursArray(id);
-    }
-  }
-
-  findQualityByWeek(id, date) {
-    if (this.findQualityArray(id).length >= 7) {
-      let endDateIndex = this.getDataByID(id).findIndex(obj => obj.date === date);
-      return this.findQualityArray(id).slice(endDateIndex - 6);
-    } else {
-      return this.findQualityArray(id);
-    }
-  }
-
   getAllUserIDs() {
-    let users = this.sleepData.map(obj => obj.userID);
+    let users = this.data.map(obj => obj.userID);
     let unique = users.filter((id, index, array) => array.indexOf(id) === index);
     return unique;
   }
 
+  // Needs refactoring
   findAvgQualityAbove3() {
     let users = [];
     let userAvgs = this.getAllUserIDs().map(id => this.calculateAvgQuality(id));
@@ -62,46 +79,7 @@ class Sleep {
     return users;
   }
 
-  calculateAvgHours(id) {
-    let userData = this.getDataByID(id);
-    let hoursSum = this.findHoursArray(id).reduce((prev, curr) => {
-      return prev += curr
-    });
-    let avgHours = hoursSum / userData.length;
-    return Math.round(avgHours * 10) / 10;
-  }
-
-  calculateAllAvgHours() {
-    let avgHours = this.sleepData.map(obj => obj.hoursSlept).reduce((prev, curr) => {
-      return prev += curr
-    }) / this.sleepData.length;
-    return Math.round(avgHours * 10) / 10;
-  }
-
-  calculateAvgQuality(id) {
-    let userData = this.getDataByID(id);
-    let qualitySum = this.findQualityArray(id).reduce((prev, curr) => {
-      return prev += curr
-    });
-    let avgQuality = qualitySum / userData.length;
-    return Math.round(avgQuality * 10) / 10;
-  }
-
-  calculateAllAvgQuality() {
-    let avgQuality = this.sleepData.map(obj => obj.sleepQuality).reduce((prev, curr) => {
-      return prev += curr
-    }) / this.sleepData.length;
-    return Math.round(avgQuality * 10) / 10;
-  }
-
-  getHoursByDate(id, date) {
-    return this.getDataByID(id).find(obj => obj.date === date).hoursSlept;
-  }
-
-  getQualityByDate(id, date) {
-    return this.getDataByID(id).find(obj => obj.date === date).sleepQuality;
-  }
-
+// Needs refactoring
   findMostHours(date) {
     let users = [];
     let hours = this.getDataByDate(date).map(obj => obj.hoursSlept);
