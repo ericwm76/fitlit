@@ -60,15 +60,16 @@ describe('Activity', () => {
   })
 
   it('should find the average number of stairs climbed for a specific date, all users', () => {
-    expect(active.findAvg)
+    expect(active.findAvg(active.getDataByDate('2019/06/22').map(obj => obj.flightsOfStairs))).to.equal(22)
 
   })
 
   it('should find the average number of steps taken for a specific date, all users', () => {
-
+    expect(active.findAvg(active.getDataByDate('2019/06/22').map(obj => obj.numSteps))).to.equal(8726)
   })
 
   it('should find the average number of minutes active for a specific date, all users', () => {
+    expect(active.findAvg(active.getDataByDate('2019/06/22').map(obj => obj.minutesActive))).to.equal(163)
 
   })
 })

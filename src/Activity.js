@@ -63,6 +63,10 @@ class Activity {
     let stairsArray = this.findPropertyArray(id, property);
     return Math.max(...stairsArray);
   }
+
+  findAvg(array) {
+    return Math.round(array.reduce((prev, curr) => prev += curr) / array.length) 
+  }
 }
 
 module.exports = Activity;
