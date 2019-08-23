@@ -11,6 +11,11 @@ class Sleep {
     return this.sleepData.filter(obj => obj.date === date)
   }
 
+  findPropertyArray(id, property) {
+    let userData = this.getDataByID(id);
+    return userData.map(data => data[property]);
+  }
+
   findHoursArray(id) {
     let userData = this.getDataByID(id);
     return userData.map(data => data.hoursSlept);
