@@ -30,6 +30,8 @@ class Activity {
       return propArray;
     }
   }
+// Need to create method to do the following: 
+// this.getDataByDate('2019/06/22').map(obj => obj.numSteps) - to get array of all users data on a specific date. 
 
   findAvg(array) {
     let avg = array.reduce(((prev, curr) => prev += curr), 0) / array.length;

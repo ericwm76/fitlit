@@ -1,4 +1,4 @@
-const sleepData = [
+const sleepSampleData = [
   {
     "userID": 1,
     "date": "2019/06/15",
@@ -482,5 +482,5 @@ const sleepData = [
 ]
 
 if (typeof module !== 'undefined') {
-  module.exports = sleepData;
+  module.exports = sleepSampleData;
 }

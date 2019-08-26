@@ -66,6 +66,8 @@ class Sleep {
     return unique;
   }
 
+  // Need to create a method to return the following: this.data.map(dataObj => dataObj.sleepQuality). This will get the array to pass into findAvg() to get the avg sleep quality of all users, all time
+
   // Needs refactoring
   findAvgQualityAbove3() {
     let users = [];

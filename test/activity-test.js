@@ -3,12 +3,12 @@ const expect = chai.expect;
 
 const Activity = require('../src/Activity');
 const User = require('../src/User')
-const sampleActivityData = require('../test/activity-sample')
+const activitySampleData = require('../test/activity-sample')
 
 let active, user;
 
 beforeEach(() => {
-  active = new Activity(sampleActivityData);
+  active = new Activity(activitySampleData);
   user = new User({
     "id": 2,
     "name": "Jarvis Considine",

@@ -11,6 +11,8 @@ let activity = new Activity(activityData);
 
 $('#user-name').text(user1.returnFirstName());
 $('#todays-date').text(currentDate);
+$('#ounces').text(hydration.findSingleValue(user1.id, currentDate, 'numOunces'));
+
 
 
 
