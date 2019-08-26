@@ -29,4 +29,6 @@ class Hydration {
   }
 }
 
-module.exports = Hydration;
+if (typeof module !== 'undefined') {
+  module.exports = Hydration;
+}

@@ -1,16 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="../src/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Activity Tracker</title>
   </head>
   <body>
-    <h1>Activity Tracker</h1>
-
+    <nav>
+      <button>Your Profile</button>
+      <h1>Activity Tracker</h1>
+      <button>Friends</button>
+    </nav>
+    <section>
+      <h1>Welcome, <span id="user-name"></span>!</h1>
+      <h2>Today's date: <span id="todays-date"></span></h2>
+    </section>
+    <main>
+      <article id="hydration">
+        <h3>Hydration</h3>
+        <p>Today: <span id="ounces"></span></p>
+        <p>This Week's Avg: <span id="ounces-weekly-avg"></span></p>
+      </article>
+      <article id="hours-slept">
+        <h3>Hours Slept</h3>
+        <p>Today: <span id="hours"></span></p>
+        <p>This Week's Avg: <span id="hours-weekly-avg"></span></p>
+      </article>
+      <article id="sleep-quality">
+        <h3>Sleep Quality</h3>
+        <p>Today: <span id="quality"></span></p>
+        <p>This Week's Avg: <span id="quality-weekly-avg"></span></p>
+      </article>
+      <article id="steps-taken">
+        <h3>Steps Taken</h3>
+        <p>Today: <span id="steps"></span></p>
+        <p>This Week's Avg: <span id="steps-weekly-avg"></span></p>
+      </article>
+      <article id="minutes-active">
+        <h3>Minutes Active</h3>
+        <p>Today: <span id="minutes"></span></p>
+        <p>This Week's Avg: <span id="minutes-weekly-avg"></span></p>
+      </article>
+      <article id="stairs-climbed">
+        <h3>Flights of Stairs Climbed</h3>
+        <p>Today: <span id="stairs"></span></p>
+        <p>This Week's Avg: <span id="stairs-weekly-avg"></span></p>
+      </article>
+    </main>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="../data/users.js"></script>
     <script type="text/javascript" src="../data/hydration.js"></script>
     <script type="text/javascript" src="../data/sleep.js"></script>
     <script type="text/javascript" src="../data/activity.js"></script>
+    <script type="text/javascript" src="./UserRepository.js"></script>
+    <script type="text/javascript" src="./User.js"></script>
+    <script type="text/javascript" src="./Hydration.js"></script>
+    <script type="text/javascript" src="./Sleep.js"></script>
+    <script type="text/javascript" src="./Activity.js"></script>
     <script type="text/javascript" src="./scripts.js"></script>
   </body>
 </html>

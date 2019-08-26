@@ -1,4 +1,4 @@
-const sampleHydrationData = [
+const hydrationData = [
   {
     "userID": 1,
     "date": "2019/06/15",
@@ -51,4 +51,6 @@ const sampleHydrationData = [
   },
 ]
 
-module.exports = sampleHydrationData;
+if (typeof module !== 'undefined') {
+  module.exports = hydrationData;
+}

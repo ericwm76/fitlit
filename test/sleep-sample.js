@@ -1,4 +1,4 @@
-const sampleSleepData = [
+const sleepData = [
   {
     "userID": 1,
     "date": "2019/06/15",
@@ -481,4 +481,6 @@ const sampleSleepData = [
   },
 ]
 
-module.exports = sampleSleepData;
+if (typeof module !== 'undefined') {
+  module.exports = sleepData;
+}
