@@ -8,15 +8,26 @@
   </head>
   <body>
     <nav>
-      <button>Your Profile</button>
-      <h1>Activity Tracker</h1>
-      <button>Friends</button>
+      <button id="profile">Your Profile</button>
+      <h1>LunarFit</h1>
+      <button id="friends">Friends</button>
     </nav>
     <section>
+      <ul id="user-info" style="display: none;">
+        <li>Your name: <span id="full-name"></span></li>
+        <li>Address: <span id="address"></span></li>
+        <li>Email: <span id="email"></span></li>
+        <li>Stride length: <span id="stride-length"></span></li>
+        <li>Step goal: <span id="user-step-goal"></span></li>
+      </ul>
       <h1>Welcome, <span id="user-name"></span>!</h1>
       <h2>Today's date: <span id="todays-date"></span></h2>
       <h2>Your step goal: <span id="user-step-goal"></span></h2>
       <h2>Average step goal worldwide: <span id="world-step-goal"></span></h2>
+      <ul id="friend-list">Your friends: 
+        <li id="friend1"></li>
+        <li id="friend2"></li>
+        <li id="friend3"></li>
     </section>
     <main>
       <article id="hydration">
@@ -55,7 +66,7 @@
         <p>Worldwide average for today: <span id="minutes-worldwide-avg"></span> minutes</p>
       </article>
       <article id="stairs-climbed">
-        <h3>Flights of Stairs Climbed</h3>
+        <h3>Stairs Climbed</h3>
         <img src="../images/ascending-stairs-signal.svg" alt="icon of a staircase">
         <p>Today: <span id="stairs"></span> flights of stairs</p>
         <p>This Week: <span id="stairs-week"></span></p>

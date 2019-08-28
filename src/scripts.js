@@ -7,12 +7,18 @@ let hydration = new Hydration(hydrationData);
 let sleep = new Sleep(sleepData);
 let activity = new Activity(activityData);
 
-// Should I be pulling from the actual datasets, or from the sample data I created?
-
+$('#profile').click(function() {$('#user-info').toggle()
+});
+$('#friends').click(function() {$('#friend-list').toggle()
+});
+$('#full-name').text(user1.name)
+$('#address').text(user1.address)
+$('#email').text(user1.email)
 $('#user-name').text(user1.returnFirstName());
 $('#todays-date').text(currentDate);
 $('#user-step-goal').text(user1.dailyStepGoal);
 $('#world-step-goal').text(userRepo.avgStepGoal());
+$('#friend1').text()
 $('#ounces').text(hydration.findSingleValue(user1.id, currentDate, 'numOunces'));
 
 $('#hours').text(sleep.findSingleValue(user.id, currentDate, 'hoursSlept'));
@@ -32,7 +38,9 @@ $('#stairs').text(activity.findSingleValue(user.id, currentDate, 'flightsOfStair
 
 $('#stairs-worldwide-avg').text(activity.findAvg(activity.getDataByDate(currentDate).map(obj => obj.flightsOfStairs)))
 
-
+function generateFriends() {
+  user1.friends.map(friend => userRepo.returnUserData(friend))
+}
 
 
 

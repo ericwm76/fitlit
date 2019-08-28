@@ -6,17 +6,19 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: black;
-  color: lightgray;
+  background-color: #11171C;
+  /*background: url('../images/stars-background.jpg');*/
+  color: #FCFCFC;
 }
 
 img {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
 }
 
 nav {
   align-items: center;
+  background-color: #19364F;
   display: flex;
   flex-direction: row;
   height: 50px;
@@ -29,6 +31,15 @@ section {
   text-align: center;
 }
 
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
 main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -38,7 +49,11 @@ main {
 }
 
 article {
+  background-color: #19364F;
+  border: 1px solid #FFD166;
+  border-radius: 5px;
   padding: 10px 0;
+  text-align: center;
 }
 
 article h3 {
