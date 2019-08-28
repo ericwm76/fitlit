@@ -13,6 +13,7 @@ class User {
     let fullName = this.name.split(' ');
     return fullName[0];
   }
+
 }
 
 if (typeof module !== 'undefined') {
