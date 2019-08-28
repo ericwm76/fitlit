@@ -1,6 +1,7 @@
+const randomID = getRandomID();
 const currentDate = '2019/07/20';
 const userRepo = new UserRepository(userData);
-let user = userRepo.returnUserData(9);
+let user = userRepo.returnUserData(randomID);
 let user1 = new User(user);
 let hydration = new Hydration(hydrationData);
 let sleep = new Sleep(sleepData);
@@ -37,6 +38,10 @@ $('#stairs').text(activity.findSingleValue(user.id, currentDate, 'flightsOfStair
 
 $('#stairs-worldwide-avg').text(activity.findAvg(activity.getDataByDate(currentDate).map(obj => obj.flightsOfStairs)))
 
+function getRandomID () {
+  return Math.floor(Math.random() * 50)
+};
+
 function generateFriends (userFriends) {
   let friends = userFriends.map(friend => {
     let userFriend = new User(userRepo.returnUserData(friend));
@@ -54,5 +59,8 @@ function generateFriends (userFriends) {
   return friends;
 }
 
-function
 let friendList = generateFriends(user1.friends)
+
+function compareFriends() {
+
+}
