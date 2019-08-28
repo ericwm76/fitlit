@@ -6,6 +6,13 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: black;
+  color: lightgray;
+}
+
+img {
+  height: 30px;
+  width: 30px;
 }
 
 nav {
@@ -27,6 +34,7 @@ main {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 250px 250px;
   grid-gap: 15px;
+  padding: 15px;
 }
 
 article {
