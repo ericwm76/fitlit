@@ -1,82 +1,11 @@
-# FitLit Starter Kit
+# FitLit
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+## Overview
 
-## Setup
+FitLit is an application I developed during my second module at the Turing School of Software and Design. It is a fitness tracker app that provides a simple user interface for displaying data related to activity, sleep, and hydration. While this was intended to be a partner project, but in a class with an odd number of students, I got lucky or unlucky, depending on your perspective, and ended up working on this project solo. 
 
-1. Within your group, decide on one person to have the project repository (repo) on their GitHub account. Then, that person should fork this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `open src/index.html` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page)
-1. Make sure both members of your team are collaborators on the forked repo.
+![fitlit-screengrab](https://user-images.githubusercontent.com/27085714/63947052-c3fa9e00-ca65-11e9-8b8b-79d2534bc88e.png)
 
-## Testing
 
-There is no boilerplate for testing in this starter-kit repo. You will need to set this up yourself. However, if you ran `npm install`, then the tooling you need to start testing is already installed (`mocha` and `chai`).
 
-## Linting Your Code
-
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit, but that's ok - the linter is still running successfully.
-
-Your linter will look only at the JavaScript files you have within the `src` and the `test` directories.
-
-## Data Model
-
-**Users**
-
-```
-[
-  {
-    "id": [number],
-    "name": [string],
-    "address": [string],
-    "email": [string],
-    "strideLength": [number - feet],
-    "dailyStepGoal": [number - steps],
-    "friends": [array - one-way connection to other user(s)]
-  },
-  ...more user data
-]
-```
-
-**Activity**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numSteps": [number - steps],
-    "minutesActive": [number - minutes],
-    "flightsOfStairs": [number - flights]
-  },
-  ...more activity data
-]
-```
-
-**Hydration**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numOunces": [number - ounces]
-  },
-  ...more hydration data
-]
-```
-
-**Sleep**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "hoursSlept": [number - hours],
-    "sleepQuality": [number - unitless]
-  },
-  ...more sleep data
-]
-```
+Good luck and have fun!
