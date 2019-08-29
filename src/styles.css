@@ -5,10 +5,10 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
   background: url('../images/stars-background.jpg');
   color: #FCFCFC;
   display: grid;
+  font-family: 'Roboto', sans-serif;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 50px auto 1fr;
   grid-template-areas: 
