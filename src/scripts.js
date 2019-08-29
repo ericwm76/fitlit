@@ -42,6 +42,9 @@ function getRandomID () {
   return Math.floor(Math.random() * 50)
 };
 
+let dates = activity.findWeekArray(user1.id, currentDate, 'date');
+console.log(dates)
+
 function generateFriends (userFriends) {
   let friends = userFriends.map(friend => {
     let userFriend = new User(userRepo.returnUserData(friend));
@@ -61,6 +64,6 @@ function generateFriends (userFriends) {
 
 let friendList = generateFriends(user1.friends)
 
-function compareFriends() {
+function compareFriends () {
 
 }

@@ -66,32 +66,30 @@ class Sleep {
     return unique;
   }
 
-  // Need to create a method to return the following: this.data.map(dataObj => dataObj.sleepQuality). This will get the array to pass into findAvg() to get the avg sleep quality of all users, all time
-
-  // Needs refactoring
   findAvgQualityAbove3() {
     let users = [];
     let userAvgs = this.getAllUserIDs().map(id => this.calculateAvgQuality(id));
 
-    for (let i = 0; i < userAvgs.length; i++) {
+    userAvgs.forEach((userAvg, i) => {
       if (userAvgs[i] > 3) {
         users.push(i + 1);
       }
-    }
+    })
+
     return users;
   }
 
-// Needs refactoring
   findMostHours(date) {
     let users = [];
     let hours = this.getDataByDate(date).map(obj => obj.hoursSlept);
     let maxTime = Math.max(...hours);
 
-    for (let i = 0; i < hours.length; i++) {
+    hours.forEach((hour, i) => {
       if (hours[i] === maxTime) {
         users.push(i + 1);
       }
-    }
+    })
+
     return users;
   }
 }
