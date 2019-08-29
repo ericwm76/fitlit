@@ -27,8 +27,8 @@ $('#full-name').text(user1.name)
 $('#address').text(user1.address)
 $('#email').text(user1.email)
 $('#user-name').text(user1.returnFirstName());
+$('.user-step-goal').text(user1.dailyStepGoal);
 $('#todays-date').text(currentDate);
-$('#user-step-goal').text(user1.dailyStepGoal);
 $('#world-step-goal').text(userRepo.avgStepGoal());
 $('#friend-1-name').text(friendList[0].name)
 $('#friend-1-goal').text(friendList[0].stepGoal)

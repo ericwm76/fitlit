@@ -120,8 +120,13 @@ section h3 {
   text-align: center;
 }
 
+section ul {
+  width: 100%;
+}
+
 section p {
   padding: 10px 0;
+  text-align: center;
 }
 
 section li {
