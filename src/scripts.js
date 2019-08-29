@@ -17,9 +17,11 @@ populateWeekData(activity, 'numSteps', 'steps')
 populateWeekData(activity, 'minutesActive', 'minutes')
 populateWeekData(activity, 'flightsOfStairs', 'stairs')
 
-$('#profile').click(function() {$('#aside-left').toggle()
+$('#profile').click(function() {
+  $('#aside-left').toggle()
 });
-$('#friends').click(function() {$('#aside-right').toggle()
+$('#friends').click(function() {
+  $('#aside-right').toggle()
 });
 $('#full-name').text(user1.name)
 $('#address').text(user1.address)
@@ -54,11 +56,9 @@ $('#moon-distance').text(sleep.findSingleValue(user.id, currentDate, 'hoursSlept
 $('#moon-miles').text(Math.round(6786 / (activity.findMilesWalked(user.id, currentDate, 'numSteps', user1.strideLength))))
 $('#rocket-height').text(Math.round((activity.findSingleValue(user.id, currentDate, 'flightsOfStairs') / 34) * 100));
 
-
-
 function getRandomID () {
   return Math.floor(Math.random() * 50)
-};
+}
 
 function populateDates () {
   dates.forEach((date, i) => {
