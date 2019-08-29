@@ -12,7 +12,7 @@
       <h1>LunarFit</h1>
       <button id="friends">Friends</button>
     </nav>
-    <section>
+    <header></header>>
       <ul id="user-info" style="display: none;">
         <li>Your name: <span id="full-name"></span></li>
         <li>Address: <span id="address"></span></li>
@@ -28,50 +28,236 @@
         <li id="friend-1"></li>
         <li id="friend-2"></li>
         <li id="friend-3"></li>
-    </section>
+    </header>
     <main>
-      <article id="hydration">
+      <section id="hydration">
         <h3>Hydration</h3>
         <img src="../images/water-drop.svg" alt="icon of a water droplet">
         <p>Today: <span id="ounces"></span> ounces</p>
-        <p>This Week: <span id="ounces-week"></span></p>
-      </article>
-      <article id="hours-slept">
+        <p>This Week: 
+          <ul class="week">
+            <li class="day-1">
+              <div id="ounces-day-1"></div>
+              <div class="date-1"></div>
+            </li>
+            <li class="day-2">
+              <div id="ounces-day-2"></div>
+              <div class="date-2"></div>
+            </li>
+            <li class="day-3">
+              <div id="ounces-day-3"></div>
+              <div class="date-3"></div>
+            </li>
+            <li class="day-4">
+              <div id="ounces-day-4"></div>
+              <div class="date-4"></div>
+            </li>
+            <li class="day-5">
+              <div id="ounces-day-5"></div>
+              <div class="date-5"></div>
+            </li>
+            <li class="day-6">
+              <div id="ounces-day-6"></div>
+              <div class="date-6"></div>
+            </li>
+            <li class="day-7">
+              <div id="ounces-day-7"></div>
+              <div class="date-7"></div>
+            </li>
+          </ul> 
+        </p>
+      </section>
+      <section id="hours-slept">
         <h3>Hours Slept</h3>
         <img src="../images/wall-clock.svg" alt="icon of a clock">
         <p>Today: <span id="hours"></span> hours</p>
-        <p>This Week: <span id="hours-week"></span></p>
+        <p>This Week: 
+          <ul class="week">
+            <li class="day-1">
+              <div id="hours-day-1"></div>
+              <div class="date-1"></div>
+            </li>
+            <li class="day-2">
+              <div id="hours-day-2"></div>
+              <div class="date-2"></div>
+            </li>
+            <li class="day-3">
+              <div id="hours-day-3"></div>
+              <div class="date-3"></div>
+            </li>
+            <li class="day-4">
+              <div id="hours-day-4"></div>
+              <div class="date-4"></div>
+            </li>
+            <li class="day-5">
+              <div id="hours-day-5"></div>
+              <div class="date-5"></div>
+            </li>
+            <li class="day-6">
+              <div id="hours-day-6"></div>
+              <div class="date-6"></div>
+            </li>
+            <li class="day-7">
+              <div id="hours-day-7"></div>
+              <div class="date-7"></div>
+            </li>
+          </ul> 
+        </p>
         <p>All Time Average: <span id="hours-all-time"></span> hours per night</p>
-      </article>
-      <article id="sleep-quality">
+      </section>
+      <section id="sleep-quality">
         <h3>Sleep Quality</h3>
         <img src="../images/moon.svg" alt="icon of a crescent moon next to zzz">
         <p>Today: <span id="quality"></span></p>
-        <p>This Week: <span id="quality-week"></span></p>
+        <p>This Week: 
+          <ul class="week">
+            <li class="day-1">
+              <div id="quality-day-1"></div>
+              <div class="date-1"></div>
+            </li>
+            <li class="day-2">
+              <div id="quality-day-2"></div>
+              <div class="date-2"></div>
+            </li>
+            <li class="day-3">
+              <div id="quality-day-3"></div>
+              <div class="date-3"></div>
+            </li>
+            <li class="day-4">
+              <div id="quality-day-4"></div>
+              <div class="date-4"></div>
+            </li>
+            <li class="day-5">
+              <div id="quality-day-5"></div>
+              <div class="date-5"></div>
+            </li>
+            <li class="day-6">
+              <div id="quality-day-6"></div>
+              <div class="date-6"></div>
+            </li>
+            <li class="day-7">
+              <div id="quality-day-7"></div>
+              <div class="date-7"></div>
+            </li>
+          </ul> 
+        </p>
         <p>All Time Average: <span id="quality-all-time"></span></p>
-      </article>
-      <article id="steps-taken">
+      </section>
+      <section id="steps-taken">
         <h3>Steps Taken</h3>
         <img src="../images/footsteps-silhouette-variant.svg" alt="icon of a pair of footprints">
         <p>Today: <span id="steps"></span> steps</p>
         <p>Miles Walked Today: <span id="miles"></span> miles (based on your stride length of <span id="stride-length"></span> feet per stride)</p>
-        <p>This Week: <span id="steps-week"></span></p>
+        <p>This Week: 
+          <ul class="week">
+            <li class="day-1">
+              <div id="steps-day-1"></div>
+              <div class="date-1"></div>
+            </li>
+            <li class="day-2">
+              <div id="steps-day-2"></div>
+              <div class="date-2"></div>
+            </li>
+            <li class="day-3">
+              <div id="steps-day-3"></div>
+              <div class="date-3"></div>
+            </li>
+            <li class="day-4">
+              <div id="steps-day-4"></div>
+              <div class="date-4"></div>
+            </li>
+            <li class="day-5">
+              <div id="steps-day-5"></div>
+              <div class="date-5"></div>
+            </li>
+            <li class="day-6">
+              <div id="steps-day-6"></div>
+              <div class="date-6"></div>
+            </li>
+            <li class="day-7">
+              <div id="steps-day-7"></div>
+              <div class="date-7"></div>
+            </li>
+          </ul> 
+        </p>
         <p>Worldwide average for today: <span id="steps-worldwide-avg"></span> steps</p>
-      </article>
-      <article id="minutes-active">
+      </section>
+      <section id="minutes-active">
         <h3>Minutes Active</h3>
         <img src="../images/minutes-active.svg" alt="icon of a running person in front of a clock">
         <p>Today: <span id="minutes"></span> minutes</p>
-        <p>This Week: <span id="minutes-week"></span></p>
+        <p>This Week: 
+          <ul class="week">
+            <li class="day-1">
+              <div id="minutes-day-1"></div>
+              <div class="date-1"></div>
+            </li>
+            <li class="day-2">
+              <div id="minutes-day-2"></div>
+              <div class="date-2"></div>
+            </li>
+            <li class="day-3">
+              <div id="minutes-day-3"></div>
+              <div class="date-3"></div>
+            </li>
+            <li class="day-4">
+              <div id="minutes-day-4"></div>
+              <div class="date-4"></div>
+            </li>
+            <li class="day-5">
+              <div id="minutes-day-5"></div>
+              <div class="date-5"></div>
+            </li>
+            <li class="day-6">
+              <div id="minutes-day-6"></div>
+              <div class="date-6"></div>
+            </li>
+            <li class="day-7">
+              <div id="minutes-day-7"></div>
+              <div class="date-7"></div>
+            </li>
+          </ul> 
+        </p>
         <p>Worldwide average for today: <span id="minutes-worldwide-avg"></span> minutes</p>
-      </article>
-      <article id="stairs-climbed">
+      </section>
+      <section id="stairs-climbed">
         <h3>Stairs Climbed</h3>
         <img src="../images/ascending-stairs-signal.svg" alt="icon of a staircase">
         <p>Today: <span id="stairs"></span> flights of stairs</p>
-        <p>This Week: <span id="stairs-week"></span></p>
+        <p>This Week: 
+          <ul class="week">
+            <li class="day-1">
+              <div id="stairs-day-1"></div>
+              <div class="date-1"></div>
+            </li>
+            <li class="day-2">
+              <div id="stairs-day-2"></div>
+              <div class="date-2"></div>
+            </li>
+            <li class="day-3">
+              <div id="stairs-day-3"></div>
+              <div class="date-3"></div>
+            </li>
+            <li class="day-4">
+              <div id="stairs-day-4"></div>
+              <div class="date-4"></div>
+            </li>
+            <li class="day-5">
+              <div id="stairs-day-5"></div>
+              <div class="date-5"></div>
+            </li>
+            <li class="day-6">
+              <div id="stairs-day-6"></div>
+              <div class="date-6"></div>
+            </li>
+            <li class="day-7">
+              <div id="stairs-day-7"></div>
+              <div class="date-7"></div>
+            </li>
+          </ul> 
+        </p>
         <p>Worldwide average for today: <span id="stairs-worldwide-avg"></span> flights of stairs</p>
-      </article>
+      </section>
     </main>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="../data/users.js"></script>

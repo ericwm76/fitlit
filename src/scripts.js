@@ -6,6 +6,15 @@ let user1 = new User(user);
 let hydration = new Hydration(hydrationData);
 let sleep = new Sleep(sleepData);
 let activity = new Activity(activityData);
+let dates = activity.findWeekArray(user1.id, currentDate, 'date');
+
+populateDates();
+populateWeekData(hydration, 'numOunces', 'ounces')
+populateWeekData(sleep, 'hoursSlept', 'hours')
+populateWeekData(sleep, 'sleepQuality', 'quality')
+populateWeekData(activity, 'numSteps', 'steps')
+populateWeekData(activity, 'minutesActive', 'minutes')
+populateWeekData(activity, 'flightsOfStairs', 'stairs')
 
 $('#profile').click(function() {$('#user-info').toggle()
 });
@@ -18,32 +27,36 @@ $('#user-name').text(user1.returnFirstName());
 $('#todays-date').text(currentDate);
 $('#user-step-goal').text(user1.dailyStepGoal);
 $('#world-step-goal').text(userRepo.avgStepGoal());
-
 $('#ounces').text(hydration.findSingleValue(user1.id, currentDate, 'numOunces'));
-
 $('#hours').text(sleep.findSingleValue(user.id, currentDate, 'hoursSlept'));
-
 $('#hours-all-time').text(sleep.findAvg(sleep.findPropArray(user.id, 'hoursSlept')));
 $('#quality').text(sleep.findSingleValue(user.id, currentDate, 'sleepQuality'));
-
 $('#quality-all-time').text(sleep.findAvg(sleep.findPropArray(user.id, 'sleepQuality')));
 $('#steps').text(activity.findSingleValue(user.id, currentDate, 'numSteps'));
 $('#miles').text(activity.findMilesWalked(user.id, currentDate, 'numSteps', user1.strideLength))
 $('#stride-length').text(user1.strideLength)
-
 $('#steps-worldwide-avg').text(activity.findAvg(activity.getDataByDate(currentDate).map(obj => obj.numSteps)))
 $('#minutes').text(activity.findSingleValue(user.id, currentDate, 'minutesActive'));
 $('#minutes-worldwide-avg').text(activity.findAvg(activity.getDataByDate(currentDate).map(obj => obj.minutesActive)))
 $('#stairs').text(activity.findSingleValue(user.id, currentDate, 'flightsOfStairs'));
-
 $('#stairs-worldwide-avg').text(activity.findAvg(activity.getDataByDate(currentDate).map(obj => obj.flightsOfStairs)))
 
 function getRandomID () {
   return Math.floor(Math.random() * 50)
 };
 
-let dates = activity.findWeekArray(user1.id, currentDate, 'date');
-console.log(dates)
+function populateDates () {
+  dates.forEach((date, i) => {
+    $(`.date-${i + 1}`).text(dates[i])
+  })
+}
+
+function populateWeekData (instance, prop, propID) {
+  let weekArray = instance.findWeekArray(user1.id, currentDate, prop);
+  weekArray.forEach((date, i) => {
+  $(`#${propID}-day-${i + 1}`).text(weekArray[i])
+  })
+}
 
 function generateFriends (userFriends) {
   let friends = userFriends.map(friend => {
